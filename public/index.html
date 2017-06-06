@@ -1,0 +1,39 @@
+<html ng-app="myApp">
+<head>
+    <title>mongoose demo</title>
+    <meta lang="en">
+</head>
+
+<body>
+    <div class="container" ng-controller="MainCtrl as vm">
+        <div class="user-form">
+            <p>
+                {{vm.message}}
+            <h2>users</h2>
+            <label>User id:</label>
+            <input type="text" ng-model="vm.user.id"><br />
+            </p>
+            <p>
+                <label>Projects</label>
+                name: <input type="text" ng-model="vm.user.project.name"><br />
+                url: <input type="text" ng-model="vm.user.project.url"><br />
+            </p>
+
+            <button ng-click="vm.saveUser(vm.user);">Save</button>
+            <button ng-click="vm.updateUser(vm.user);">Add project</button>
+        </div>
+        <ul>
+            <li ng-repeat="user in vm.users">
+                id: {{user.id}} project:{{user.projects}}
+            </li>
+        </ul>
+
+
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script src="./app/app.js"></script>
+
+</body>
+</html>
